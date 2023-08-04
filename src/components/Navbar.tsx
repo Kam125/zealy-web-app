@@ -72,13 +72,13 @@ const ZeallyNavbar: React.FC = () => {
         <Col xs="auto" className='third-div'>
           <Nav navbar>
             <NavItem className='m-1'>
-              <NavLink href="#">Right Link</NavLink>
+              <NavLink href="#">Create a community</NavLink>
             </NavItem>
             <NavItem className='m-1'>
-              <Button color="secondary">Login</Button>
+              <Button className='login-button' color="secondary">Login</Button>
             </NavItem>
             <NavItem className='m-1'>
-              <Button color="light">{buttonText}</Button>
+              <Button className='' color="light">{buttonText}</Button>
             </NavItem>
           </Nav>
         </Col>
