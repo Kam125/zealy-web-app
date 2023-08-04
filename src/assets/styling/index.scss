@@ -131,30 +131,55 @@ body {
     //     background-color: #555; /* Customize the color of the scrollbar thumb on hover */
     // }
 
-    .right-filters-container {
-        position: relative;
-        overflow-x: hidden;
-    }
+    // Add the following styles to your SCSS file
 
-    .scroll-container {
-        display: flex;
+.right-filters-container {
+    position: relative; // Make sure the container is positioned correctly
+  }
+  
+  .scroll-container {
+    display: flex; // Ensure the content is displayed in a flex container
+    overflow-x: auto;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  
+    /* Add a custom scrollbar style */
+    &::-webkit-scrollbar {
+      width: 0; /* Hide the scrollbar in WebKit-based browsers */
     }
+  
+    &::-webkit-scrollbar-thumb {
+      background-color: #888; /* Customize the color of the scrollbar thumb */
+      border-radius: 5px; /* Customize the border radius of the thumb */
+    }
+  
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: #555; /* Customize the color of the scrollbar thumb on hover */
+    }
+  }
+  
+  .scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #f1f1f1;
+    border: none;
+    padding: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  .left-scroll-button {
+    left: 0;
+  }
+  
+  .right-scroll-button {
+    right: 0;
+  }
+  
 
-    .right-filters {
-        display: flex;
-    }
-
-    .scroll-buttons {
-        position: absolute;
-        top: 50%;
-        right: 0;
-        transform: translateY(-50%);
-        display: flex;
-    }
-
-    .scroll-button {
-        padding: 8px;
-    }
+    
 
 
 }

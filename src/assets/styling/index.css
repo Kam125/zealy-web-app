@@ -98,23 +98,40 @@ body {
 }
 .filters .right-filters-container {
   position: relative;
-  overflow-x: hidden;
 }
 .filters .scroll-container {
   display: flex;
+  overflow-x: auto;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  /* Add a custom scrollbar style */
 }
-.filters .right-filters {
-  display: flex;
+.filters .scroll-container::-webkit-scrollbar {
+  width: 0; /* Hide the scrollbar in WebKit-based browsers */
 }
-.filters .scroll-buttons {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  display: flex;
+.filters .scroll-container::-webkit-scrollbar-thumb {
+  background-color: #888; /* Customize the color of the scrollbar thumb */
+  border-radius: 5px; /* Customize the border radius of the thumb */
+}
+.filters .scroll-container::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Customize the color of the scrollbar thumb on hover */
 }
 .filters .scroll-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #f1f1f1;
+  border: none;
   padding: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 1;
+}
+.filters .left-scroll-button {
+  left: 0;
+}
+.filters .right-scroll-button {
+  right: 0;
 }
 
 @media (max-width: 1035px) {

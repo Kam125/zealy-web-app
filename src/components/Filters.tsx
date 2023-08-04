@@ -1,8 +1,26 @@
-import React from 'react'
+import React, { useState, useRef } from 'react';
 import { Button, Row, Col } from 'reactstrap';
-import FiltersCarousel from './FiltersCarousel';
+
 
 function Filters() {
+  const filtersContainerRef = useRef<HTMLDivElement>(null); // Specify the type of the ref
+  const [scrollLeft, setScrollLeft] = useState(0);
+  console.log(scrollLeft);
+
+  const handleScrollLeft = () => {
+    if (filtersContainerRef.current) {
+      filtersContainerRef.current.scrollLeft -= 100; // You can adjust the scroll amount here
+      setScrollLeft(filtersContainerRef.current.scrollLeft);
+    }
+  };
+
+  const handleScrollRight = () => {
+    if (filtersContainerRef.current) {
+      filtersContainerRef.current.scrollLeft += 100; // You can adjust the scroll amount here
+      setScrollLeft(filtersContainerRef.current.scrollLeft);
+    }
+  };
+
   return (
     <Row className='filters'>
       <Col lg='4' md='12' className='d-flex gap-2 mb-4'>
@@ -24,8 +42,8 @@ function Filters() {
       </Button>
       </Col> 
       <Col className='right-filters-container'>
-        <FiltersCarousel />
-      {/* <Col className='d-flex gap-2 rigt-filters'>
+        <div className='scroll-container' ref={filtersContainerRef}>
+      <Col className='d-flex gap-2 rigt-filters'>
       <Button className='d-flex align-items-center gap-2'>     
         <span>All</span>
       </Button>
@@ -56,7 +74,14 @@ function Filters() {
       <Button className='d-flex align-items-center gap-2'>
         <span>Infrastructure</span>
       </Button>
-      </Col>   */}
+      <Button className='scroll-button left-scroll-button' onClick={handleScrollLeft}>
+          Left
+        </Button>
+        <Button className='scroll-button right-scroll-button' onClick={handleScrollRight}>
+          Right
+        </Button> 
+      </Col> 
+      </div>
       </Col> 
      
     </Row>

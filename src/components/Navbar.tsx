@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Navbar, NavbarBrand, Nav, NavItem, NavLink, Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Button, Col, Row } from 'reactstrap';
+import { Navbar, Nav, NavItem, NavLink, Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Button, Col, Row } from 'reactstrap';
 import logo from '../assets/images/logo.png';
 
 const ZeallyNavbar: React.FC = () => {
