@@ -50,19 +50,19 @@ const ZeallyNavbar: React.FC = () => {
                 </DropdownToggle>
                 <DropdownMenu>
                   <DropdownItem>
-                    <a href="">
+                    <a href="/">
                       <p>About</p>
                       <span>Learn more about zealy</span>
                     </a>
                   </DropdownItem>
                   <DropdownItem>
-                  <a href="">
+                  <a href="/">
                       <p>Media Kit</p>
                       <span>Learn more about zealy</span>
                     </a>
                   </DropdownItem>
                   <DropdownItem>
-                  <a href="">
+                  <a href="/">
                       <p>Careers</p>
                       <span>Learn more about zealy</span>
                     </a>
