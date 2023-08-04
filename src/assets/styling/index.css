@@ -28,6 +28,24 @@ body {
   color: white;
   border-radius: 15px;
 }
+.navbar .dropdown-menu {
+  background-color: #2c2c2c;
+}
+.navbar .dropdown-menu a, .navbar .dropdown-menu .dropdown-item {
+  color: white;
+  text-decoration: none !important;
+}
+.navbar .dropdown-menu a p, .navbar .dropdown-menu .dropdown-item p {
+  margin-bottom: 0%;
+}
+.navbar .dropdown-menu a span, .navbar .dropdown-menu .dropdown-item span {
+  color: #7e7e7e;
+}
+.navbar .dropdown-menu a:hover, .navbar .dropdown-menu .dropdown-item:hover {
+  background-color: #353535 !important;
+  color: white;
+  border-radius: 15px;
+}
 .navbar button {
   border-radius: 13px;
   border-color: rgba(255, 255, 255, 0.1019607843);

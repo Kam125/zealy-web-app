@@ -49,9 +49,24 @@ const ZeallyNavbar: React.FC = () => {
                 Resources
                 </DropdownToggle>
                 <DropdownMenu>
-                  <DropdownItem>Option 1</DropdownItem>
-                  <DropdownItem>Option 2</DropdownItem>
-                  <DropdownItem>Option 3</DropdownItem>
+                  <DropdownItem>
+                    <a href="">
+                      <p>About</p>
+                      <span>Learn more about zealy</span>
+                    </a>
+                  </DropdownItem>
+                  <DropdownItem>
+                  <a href="">
+                      <p>Media Kit</p>
+                      <span>Learn more about zealy</span>
+                    </a>
+                  </DropdownItem>
+                  <DropdownItem>
+                  <a href="">
+                      <p>Careers</p>
+                      <span>Learn more about zealy</span>
+                    </a>
+                  </DropdownItem>
                 </DropdownMenu>
               </Dropdown>
               {/* Use onMouseEnter and onMouseLeave event handlers */}
