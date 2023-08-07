@@ -1,5 +1,6 @@
 import React from 'react';
 import { Row, Col, Card, CardBody, CardTitle, CardText, CardLink } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 
 const News = () => {
@@ -8,20 +9,24 @@ const News = () => {
       <Row>
         <Col md="6">
           <Card className='left-card'>
-            <CardBody>
-              <CardTitle tag="h3">Exciting news! <br></br> Zealy's community is launching</CardTitle>
-              <CardText>Join us to be part of movement</CardText>
-              <CardLink href="#">Learn More →</CardLink>
-            </CardBody>
+            <Link to="/welcome">
+              <CardBody>
+                <CardTitle tag="h3">Exciting news! <br></br> Zealy's community is launching</CardTitle>
+                <CardText>Join us to be part of movement</CardText>
+                <Link to="/welcome">Learn More →</Link>
+              </CardBody>
+            </Link>
           </Card>
         </Col>
         <Col md="6">
           <Card className='right-card'>
-            <CardBody>
-            <CardTitle tag="h3">New name, <br></br> same awesome product</CardTitle>
-              <CardText>Join us to be part of movement</CardText>
-              <CardLink href="#">Learn More →</CardLink>
-            </CardBody>
+            <Link to="/welcome">
+              <CardBody>
+                <CardTitle tag="h3">New name, <br></br> same awesome product</CardTitle>
+                <CardText>Join us to be part of movement</CardText>
+                <Link to="/welcome">Learn More →</Link>
+              </CardBody>
+            </Link>
           </Card>
         </Col>
       </Row>

@@ -333,6 +333,148 @@ body {
   color: rgba(255, 255, 255, 0.5921568627);
 }
 
+.welcome {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px 10px 0px 10px;
+}
+
+.welcome-sidebar {
+  background-color: rgb(14, 17, 22);
+  border-radius: 25px;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 10px;
+  position: fixed;
+  height: 98%;
+}
+.welcome-sidebar i {
+  color: rgba(255, 255, 255, 0.9215686275);
+  border-color: rgba(255, 255, 255, 0.0549019608);
+  background-color: rgba(255, 255, 255, 0.0549019608);
+  display: block;
+  padding: 15px;
+  margin: 20px auto;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 18px;
+  border-radius: 18px;
+  border: 0.8px solid #3d3d3d;
+}
+
+.welcome-navbar {
+  background-color: rgb(14, 17, 22);
+  border-radius: 25px;
+  width: 230px;
+  margin-left: 80px;
+  padding: 0px;
+  position: fixed;
+  height: 98%;
+  text-align: left;
+  color: white;
+}
+.welcome-navbar .nav-top {
+  padding: 70px 15px 5px;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://crew3-production.s3.eu-west-3.amazonaws.com/public/5d67cdf1-9abe-4d1b-afba-ce9bf016493f-profile.png);
+  background-size: 110% 120%;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 30px;
+}
+.welcome-navbar .nav-link {
+  padding: 10px 7.5px;
+  margin: 0px 7.5px;
+}
+.welcome-navbar .nav-link i {
+  color: #666666;
+}
+.welcome-navbar .nav-link:hover {
+  background-color: #2c2c2c;
+  border-radius: 30px;
+}
+
+.quests {
+  margin-left: 333px;
+  padding: 16px;
+  color: #7e7e7e;
+  font-weight: bold;
+}
+.quests .logo {
+  width: 200px;
+}
+.quests h2 {
+  color: white;
+}
+.quests button {
+  margin-top: 20px;
+  margin-right: 10px;
+  background-color: transparent;
+  border-color: #4d4c4c;
+}
+.quests button:hover {
+  background-color: rgba(39, 39, 39, 0.4666666667);
+}
+.quests button .fa-hands-clapping {
+  color: rgb(228, 133, 10);
+}
+.quests button .fa-fire {
+  color: rgb(255, 60, 0);
+}
+.quests #find-zeal-heading {
+  color: #8E7AFF;
+  margin: 40px 0px 30px;
+}
+.quests .find-your-zeal .welcome-card {
+  width: 350px;
+  border: 1px solid rgb(29, 26, 65);
+  padding: 20px 10px;
+  background: linear-gradient(45deg, rgb(12, 10, 31), rgb(15, 13, 26));
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+}
+.quests .find-your-zeal .welcome-card:hover {
+  background: linear-gradient(45deg, rgb(15, 13, 26), rgb(12, 10, 31));
+}
+.quests .find-your-zeal .welcome-card h4 {
+  color: white;
+}
+.quests .find-your-zeal .welcome-card p {
+  font-weight: 400;
+  color: #cecece;
+  height: 50px;
+  overflow: hidden;
+}
+.quests #lift-off-heading {
+  color: #e2a90d;
+  margin: 40px 0px 30px;
+}
+.quests .lift-off .welcome-card {
+  width: 350px;
+  border: 1px solid rgb(29, 26, 65);
+  padding: 20px 10px;
+  background: linear-gradient(45deg, rgb(12, 10, 31), rgb(15, 13, 26));
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+}
+.quests .lift-off .welcome-card:hover {
+  background: linear-gradient(45deg, rgb(15, 13, 26), rgb(12, 10, 31));
+}
+.quests .lift-off .welcome-card h4 {
+  color: white;
+}
+.quests .lift-off .welcome-card p {
+  font-weight: 400;
+  color: #cecece;
+  height: 50px;
+  overflow: hidden;
+}
+.quests .lift-off .welcome-card #xp-btn {
+  visibility: hidden;
+}
+
 @media (max-width: 1035px) {
   .second-div {
     display: none;
