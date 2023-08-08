@@ -49,8 +49,8 @@ function Footer() {
                 </Col>
                 <Col xs='auto'>
                     <Row>
-                    <i className="fa fa-asterisk"></i>
-                    <i className="fa fa-asterisk"></i>
+                    <i className="fa-brands fa-twitter"></i>
+                    <i className="fa-brands fa-discord"></i>
                     </Row>
                 </Col>
 

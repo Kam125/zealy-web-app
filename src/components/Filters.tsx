@@ -29,16 +29,16 @@ function Filters() {
           <span>New</span>
         </Button>
         <Button className='d-flex align-items-center gap-2'>
-          <i className="fa-solid fa-fire"></i>
-          <span>New</span>
+          <i className="fa-solid fa-star"></i>
+          <span>Featured</span>
         </Button>
         <Button className='d-flex align-items-center gap-2'>
-          <i className="fa fa-asterisk"></i>
+          <i className="fa-solid fa-fire"></i>
           <span>Trendy</span>
         </Button>
         <Button className='d-flex align-items-center gap-2'>
           <i className="fa fa-asterisk"></i>
-          <span>New</span>
+          <span>Upcoming</span>
         </Button>
       </Col>
       <Col lg='8' md='12' className='right-filters-container'>
@@ -73,6 +73,18 @@ function Filters() {
             </Button>
             <Button className='d-flex align-items-center gap-2'>
               <span>Infrastructure</span>
+            </Button>
+            <Button className='d-flex align-items-center gap-2'>
+              <span>Education</span>
+            </Button>
+            <Button className='d-flex align-items-center gap-2'>
+              <span>Art</span>
+            </Button>
+            <Button className='d-flex align-items-center gap-2'>
+              <span>NFT</span>
+            </Button>
+            <Button className='d-flex align-items-center gap-2'>
+              <span>DAO</span>
             </Button>
             <Button className='scroll-button left-scroll-button' onClick={handleScrollLeft}>
               ←

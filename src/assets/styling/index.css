@@ -1,5 +1,6 @@
+@charset "UTF-8";
 body {
-  background: black !important;
+  background-color: #0E1116 !important;
   color: rgba(255, 255, 255, 0.9215686275);
   margin: 0%;
 }
@@ -9,9 +10,9 @@ body {
 }
 
 .home {
-  background-color: transparent;
-  width: 90%;
-  margin: auto;
+  background-color: #0D0D0D;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 .navbar {
@@ -190,6 +191,7 @@ body {
   background-color: transparent !important;
   border-radius: 15px;
   border-color: #2c2c2c;
+  font-size: 12px;
 }
 .filters .right-filters-container {
   position: relative;
@@ -210,7 +212,7 @@ body {
   position: absolute;
   top: -5px;
   background-color: #141414 !important;
-  font-size: 24px !important;
+  font-size: 18px !important;
   cursor: pointer;
   border-radius: 20px;
   z-index: 1;
@@ -233,6 +235,11 @@ body {
   border: 1px solid rgb(34, 34, 34);
   border-radius: 15px;
   padding: 15px;
+}
+.primary-card .card:hover {
+  background: linear-gradient(to right, #1B1B1B, #0D0D0D);
+  padding: 13px;
+  border-color: rgb(44, 44, 44);
 }
 .primary-card .card .card-text {
   color: rgba(255, 255, 255, 0.5921568627);
@@ -361,6 +368,7 @@ body {
   padding: 10px;
   position: fixed;
   height: 98%;
+  text-align: center;
 }
 .welcome-sidebar i {
   color: rgba(255, 255, 255, 0.9215686275);
@@ -405,24 +413,25 @@ body {
 .welcome-navbar .nav-top .dropdown-menu {
   width: 200px;
   margin-top: 30px;
+  padding: 5px;
   background-color: rgb(40, 40, 40);
   border-radius: 20px;
 }
 .welcome-navbar .nav-top .dropdown-menu .dropdown-item {
   color: white;
-  padding: 10px;
+  padding: 5px 10px;
 }
 .welcome-navbar .nav-top .dropdown-menu .dropdown-item:hover {
   background-color: #3b3b3b;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 .welcome-navbar .nav-top .dropdown-menu .dropdown-footer .dropdown-item {
-  color: #c22f2f;
-  padding: 10px;
+  color: #E75C61;
+  padding: 5px 10px;
 }
 .welcome-navbar .nav-top .dropdown-menu .dropdown-footer .dropdown-item:hover {
-  background-color: rgba(214, 72, 72, 0.671);
-  border-radius: 20px;
+  background-color: #442B2B;
+  border-radius: 10px;
 }
 .welcome-navbar a {
   text-decoration: none;
@@ -430,7 +439,7 @@ body {
 }
 .welcome-navbar .nav-link {
   padding: 10px 7.5px;
-  margin: 0px 7.5px;
+  margin: 5px 7.5px;
   cursor: pointer;
 }
 .welcome-navbar .nav-link i {
@@ -468,11 +477,11 @@ body {
 .quests button .fa-fire {
   color: rgb(255, 60, 0);
 }
-.quests #find-zeal-heading {
+.quests #👋-find-your-zeal-heading {
   color: #8E7AFF;
   margin: 40px 0px 30px;
 }
-.quests .find-your-zeal .welcome-card {
+.quests .👋-find-your-zeal .welcome-card {
   width: 350px;
   border: 1px solid #6054AB;
   padding: 20px 10px;
@@ -481,23 +490,23 @@ body {
   transition: all 0.3s ease-in-out 0s;
   cursor: pointer;
 }
-.quests .find-your-zeal .welcome-card:hover {
+.quests .👋-find-your-zeal .welcome-card:hover {
   background: linear-gradient(45deg, #1a1c2b, #13151F);
 }
-.quests .find-your-zeal .welcome-card h4 {
+.quests .👋-find-your-zeal .welcome-card h4 {
   color: white;
 }
-.quests .find-your-zeal .welcome-card p {
+.quests .👋-find-your-zeal .welcome-card p {
   font-weight: 400;
   color: #cecece;
   height: 50px;
   overflow: hidden;
 }
-.quests #lift-off-heading {
+.quests #🔥-prepare-for-lift-off-heading {
   color: #F5C001;
   margin: 40px 0px 30px;
 }
-.quests .lift-off .welcome-card {
+.quests .🔥-prepare-for-lift-off .welcome-card {
   width: 350px;
   border: 1px solid #7E650C;
   padding: 20px 10px;
@@ -506,19 +515,19 @@ body {
   transition: all 0.3s ease-in-out 0s;
   cursor: pointer;
 }
-.quests .lift-off .welcome-card:hover {
+.quests .🔥-prepare-for-lift-off .welcome-card:hover {
   background: linear-gradient(-45deg, #212014, #141615);
 }
-.quests .lift-off .welcome-card h4 {
+.quests .🔥-prepare-for-lift-off .welcome-card h4 {
   color: white;
 }
-.quests .lift-off .welcome-card p {
+.quests .🔥-prepare-for-lift-off .welcome-card p {
   font-weight: 400;
   color: #cecece;
   height: 50px;
   overflow: hidden;
 }
-.quests .lift-off .welcome-card #xp-btn {
+.quests .🔥-prepare-for-lift-off .welcome-card #xp-btn {
   visibility: hidden;
 }
 
@@ -589,6 +598,10 @@ body {
 
 .welcome-top-navbar {
   display: none;
+}
+
+.post-link {
+  text-decoration: none;
 }
 
 @media (max-width: 1035px) {

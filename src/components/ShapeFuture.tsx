@@ -1,6 +1,8 @@
 import React from 'react';
-import { Row, Card, CardBody, CardTitle, CardText, CardLink } from 'reactstrap';
+import { Row, Card, CardBody, CardTitle, CardText } from 'reactstrap';
 import CardBG from '../assets/images/shape-future-bg.png'
+import { Link } from 'react-router-dom';
+
 
 
 function ShapeFuture() {
@@ -13,7 +15,7 @@ function ShapeFuture() {
             <CardBody>
             <CardTitle tag="h3">Dare to shape the <br></br> future with us.</CardTitle>
               <CardText>Whether you are a contributor or a <br></br> community manager, you will find <br></br> what you are looking for.</CardText>
-              <CardLink href="#">Join our community</CardLink>
+              <Link to='/welcome/quests'>Join our community</Link>
             </CardBody>
           </Card>
       </Row>
