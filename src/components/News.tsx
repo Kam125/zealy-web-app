@@ -9,11 +9,11 @@ const News = () => {
       <Row>
         <Col md="6">
           <Card className='left-card'>
-            <Link to="/welcome">
+            <Link to="/welcome/quests">
               <CardBody>
                 <CardTitle tag="h3">Exciting news! <br></br> Zealy's community is launching</CardTitle>
                 <CardText>Join us to be part of movement</CardText>
-                <Link to="/welcome">Learn More →</Link>
+                <Link to="/welcome/quests">Learn More →</Link>
               </CardBody>
             </Link>
           </Card>

@@ -7,7 +7,7 @@ function Quests() {
         <div className='quests text-start'>
             <Row>
                 <Col xs='auto'>
-                    <img src='https://crew3-production.s3.eu-west-3.amazonaws.com/public/5d67cdf1-9abe-4d1b-afba-ce9bf016493f-profile.png' alt='' className='logo'/>;
+                    <img src='https://crew3-production.s3.eu-west-3.amazonaws.com/public/5d67cdf1-9abe-4d1b-afba-ce9bf016493f-profile.png' alt='' className='logo'/>
                 </Col>
                 <Col>
                     <h2>Welcome To Zealy</h2>

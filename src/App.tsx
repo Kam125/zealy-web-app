@@ -2,7 +2,8 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'; // Import the necessary components from react-router-dom
 import './App.css';
 import Home from './pages/Home';
-import WelcomeZelly from './pages/Welome';
+import WelcomeQuests from './pages/WelcomeQuests';
+import LeaderBoard from './pages/LeaderBoard';
 
 
 
@@ -12,7 +13,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/welcome" element={<WelcomeZelly />} />
+          <Route path="/welcome/quests" element={<WelcomeQuests />} />
+          <Route path="/welcome/leaderboard" element={<LeaderBoard />} />
         </Routes>
       </BrowserRouter>
     </div>
