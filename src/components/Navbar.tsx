@@ -48,11 +48,11 @@ const ZeallyNavbar: React.FC = () => {
   return (
     <>
       <Navbar color="" expand="md">
-        <Row className="w-100 p-3">
-          <Col xs="auto" className='m-1'>
+        <Row className="w-100">
+          <Col xs="auto" className='m-1 p-0'>
             <img src={logo} alt="Logo" />
           </Col>
-          <Col className='second-div'>
+          <Col className='second-div p-0'>
             <Nav className="mr-auto" navbar>
               <div className="d-flex align-items-center">
                 {/* Use onMouseEnter and onMouseLeave event handlers */}
@@ -96,7 +96,7 @@ const ZeallyNavbar: React.FC = () => {
               </div>
             </Nav>
           </Col>
-          <Col xs="auto" className='third-div'>
+          <Col xs="auto" className='third-div p-0'>
             <Nav navbar>
               <NavItem className='m-1'>
                 <NavLink href="#">Create a community</NavLink>

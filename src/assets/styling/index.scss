@@ -724,6 +724,27 @@ body {
     text-decoration: none;
 }
 
+.explore {
+    background-color: #0D0D0D !important;
+    .row {
+        margin: 0%;
+    }
+    .navbar {
+        border: 1px solid grey;
+       padding: 10px 20px !important;
+       width: 95%;
+       margin: auto;
+       border-bottom-left-radius: 15px;
+       border-bottom-right-radius: 15px;
+    }
+    .filters {
+        position: fixed;
+        top: 100px;
+        left: 35px;
+        padding: 20px 45px 20px 0px;
+    }
+}
+
 
 
 @media (max-width: 1035px) {
