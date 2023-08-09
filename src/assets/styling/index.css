@@ -22,7 +22,7 @@ body {
   left: 0 !important;
   right: 0 !important;
   background-color: #0D0D0D !important;
-  z-index: 999 !important;
+  z-index: 1 !important;
 }
 .navbar a {
   color: white;
@@ -34,6 +34,7 @@ body {
 }
 .navbar .dropdown-menu {
   background-color: #2c2c2c;
+  z-index: 10000000000000000000000 !important;
 }
 .navbar .dropdown-menu a,
 .navbar .dropdown-menu .dropdown-item {
@@ -206,7 +207,7 @@ body {
   position: sticky;
   top: 90px;
   background-color: #0D0D0D !important;
-  z-index: 9999;
+  z-index: 2;
 }
 .filters button {
   background-color: transparent !important;
@@ -658,6 +659,7 @@ body {
 
 .explore {
   background-color: #0D0D0D;
+  margin-top: -100px;
 }
 .explore .row {
   margin: 0%;
@@ -670,7 +672,7 @@ body {
   z-index: 1000;
 }
 .explore .explore-content {
-  padding: 50px 35px 0px 35px;
+  padding: 150px 35px 0px 35px;
   color: white;
 }
 .explore .explore-content p {
@@ -697,6 +699,65 @@ body {
 }
 .explore .explore-content .footer {
   margin-top: 100px;
+}
+
+.dropdown-menu {
+  z-index: 300000000 !important;
+}
+
+.signup {
+  margin: 0%;
+}
+.signup .row {
+  width: 100%;
+  margin: 0%;
+}
+.signup .signup-content {
+  width: 90%;
+  margin: auto;
+}
+.signup .signup-left {
+  color: white;
+  background-color: #161616;
+  padding: 36px 20px !important;
+  height: 100vh;
+}
+.signup .signup-left p, .signup .signup-left span {
+  color: #8E8E8E;
+}
+.signup .signup-left button {
+  background-color: #282828;
+  border-color: #393939;
+  border-radius: 15px;
+}
+.signup .signup-left .signup-header button {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+.signup .signup-left form button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+}
+.signup .signup-left form input {
+  background-color: transparent;
+  border-color: #393939;
+  border-radius: 15px;
+  margin-top: 20px;
+  padding: 10px;
+}
+.signup .signup-left form input::-moz-placeholder {
+  color: #646464;
+}
+.signup .signup-left form input::placeholder {
+  color: #646464;
+}
+.signup .signup-right {
+  background: url(https://zealy.io/nstatic/auth.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 @media (max-width: 1035px) {

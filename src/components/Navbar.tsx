@@ -4,6 +4,8 @@ import {
   Modal, ModalBody
 } from 'reactstrap';
 import logo from '../assets/images/logo.png';
+import { Link } from 'react-router-dom';
+
 
 const ZeallyNavbar: React.FC = () => {
   const [dropdown1Open, setDropdown1Open] = useState(false);
@@ -27,6 +29,9 @@ const ZeallyNavbar: React.FC = () => {
   const toggleModal = () => {
     if (window.innerWidth < 768) {
       setModalOpen(!modalOpen);
+    }
+    else {
+      window.location.href = '/signup';
     }
   };
 
@@ -102,7 +107,9 @@ const ZeallyNavbar: React.FC = () => {
                 <NavLink href="#">Create a community</NavLink>
               </NavItem>
               <NavItem className='m-1'>
-                <Button className='login-button' color="secondary">Login</Button>
+                <Link className='post-link' to='/login'>
+                  <Button className='login-button' color="secondary">Login</Button>
+                </Link>
               </NavItem>
               <NavItem className='m-1'>
                 <Button className='' color="light" onClick={toggleModal}>{buttonText}</Button>
@@ -146,10 +153,14 @@ const ZeallyNavbar: React.FC = () => {
           <hr></hr>
           <Row className='nav-modal-buttons'>
             <Col>
-              <Button className='login-button' color="secondary">Login</Button>
+              <Link to='/login' className='post-link'>
+                <Button className='login-button' color="secondary">Login</Button>
+              </Link>
             </Col>
             <Col>
-              <Button className='' color="light">Create an account</Button>
+              <Link to='/signup' className='post-link'>
+                <Button className='' color="light">Create an account</Button>
+              </Link>
             </Col>
           </Row>
         </ModalBody>
