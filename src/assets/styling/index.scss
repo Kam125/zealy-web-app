@@ -15,15 +15,13 @@ body {
 }
 
 .navbar {
-    background-color: transparent !important;
-    padding: 30px 7% !important;
+    margin: 30px 6% !important;
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
     right: 0 !important;
+    background-color: #0D0D0D !important;
     z-index: 999 !important;
-    /* Adjust the z-index as needed, it should be higher than other elements on the page */
-    /* Add other styles as needed */
 
     a {
         color: white;
@@ -155,10 +153,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 
-    // background-position-x: right;
-    // background-position-y: 150px;
     .header-content {
-
         margin-left: 100px;
         width: 40%;
         margin-top: 200px;
@@ -177,13 +172,32 @@ body {
         input {
             margin-top: 20px;
             background-color: #0D0D0D;
-            border: 1px solid rgb(104, 104, 104);
-            color: #ffffff97;
+            border: 1px solid #484848;
+            color: white;
+            border-left: none;
+            padding: 10px 20px;
+            border-radius: 15px;
 
             &::placeholder {
-                color: #ffffff97;
+                color: #5E5E5E;
             }
 
+        }
+
+        .input-group {
+            width: 80%;
+        }
+
+        .input-group-text {
+            background-color: #0D0D0D;
+            border: 1px solid #484848;
+            color: #ECECEC;
+            padding-top: 0;
+            margin-top: 20px;
+            padding-left: 15px;
+            border-right: none;
+            font-size: 14px;
+            border-radius: 15px;
         }
     }
 }
@@ -218,6 +232,11 @@ body {
 }
 
 .filters {
+    position: sticky;
+    top: 90px;
+    background-color: #0D0D0D !important;
+    z-index: 9999;
+
     button {
         background-color: transparent !important;
         border-radius: 15px;
@@ -315,6 +334,22 @@ body {
         }
 
 
+    }
+}
+
+.primary-card-small {
+
+    .card {
+        img {
+            width: 40px !important;
+            border-radius: 5px;
+        }
+
+        padding: 0;
+
+        .card-body {
+            padding: 5px 10px;
+        }
     }
 }
 
@@ -476,6 +511,7 @@ body {
         background-repeat: no-repeat;
         background-position: center;
         margin-bottom: 30px;
+
         button {
             background: none;
             border: none;
@@ -483,24 +519,29 @@ body {
             margin: 0%;
             cursor: pointer;
         }
+
         .dropdown-menu {
             width: 200px;
             margin-top: 30px;
             padding: 5px;
             background-color: rgb(40, 40, 40);
             border-radius: 20px;
+
             .dropdown-item {
                 color: white;
                 padding: 5px 10px;
+
                 &:hover {
                     background-color: #3b3b3b;
                     border-radius: 10px;
                 }
             }
+
             .dropdown-footer {
                 .dropdown-item {
                     color: #E75C61;
                     padding: 5px 10px;
+
                     &:hover {
                         background-color: #442B2B;
                         border-radius: 10px;
@@ -670,6 +711,7 @@ body {
             overflow-y: auto;
             font-size: 12px;
             font-weight: 400;
+
             .col-auto {
                 padding: 5px !important;
             }
@@ -716,32 +758,91 @@ body {
     }
 }
 
-.welcome-top-navbar{
+.welcome-top-navbar {
     display: none;
 }
 
 .post-link {
     text-decoration: none;
+    h3 {
+
+        color: white;
+    }
+}
+
+.explore-parent {
+    background-color: #0D0D0D;
+
+    .navbar-parent {
+        background-color: #0D0D0D;
+        width: 100%;
+    }
+
+    .navbar {
+        border: 1px solid rgb(80, 80, 80);
+        padding: 20px 20px !important;
+        width: 95%;
+        margin: auto !important;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        background-color: #0D0D0D !important;
+    }
 }
 
 .explore {
-    background-color: #0D0D0D !important;
+    background-color: #0D0D0D;
+
     .row {
         margin: 0%;
     }
-    .navbar {
-        border: 1px solid grey;
-       padding: 10px 20px !important;
-       width: 95%;
-       margin: auto;
-       border-bottom-left-radius: 15px;
-       border-bottom-right-radius: 15px;
-    }
+
+
+
     .filters {
-        position: fixed;
-        top: 100px;
-        left: 35px;
-        padding: 20px 45px 20px 0px;
+        // position: -webkit-sticky;
+        position: sticky;
+        top: 90px;
+        margin-top: 90px;
+        padding: 20px 2% 20px 2%;
+        z-index: 1000;
+    }
+
+    .explore-content {
+        padding: 50px 35px 0px 35px;
+        color: white;
+
+        p {
+            color: #969696;
+        }
+
+        .btn-group {
+            background-color: transparent;
+
+            .active {
+                background-color: #262626;
+            }
+        }
+
+        .primary-card {
+            width: 98% !important;
+            margin: auto;
+            margin-bottom: 20px;
+
+            .card {
+                width: 99% !important;
+
+                padding: 5px;
+
+                .col,
+                .col-auto {
+                    padding-left: 0%;
+                }
+            }
+        }
+
+        .footer {
+            margin-top: 100px;
+        }
     }
 }
 
@@ -754,6 +855,12 @@ body {
 
     .third-div {
         margin-left: auto;
+    }
+
+    .explore-content {
+        .btn-group {
+            display: none;
+        }
     }
 
 }
@@ -797,23 +904,26 @@ body {
     .welcome {
         .quests {
             margin-left: 0%;
+
             .welcome-card {
                 width: 100%;
             }
         }
     }
 
-    .welcome-top-navbar{
+    .welcome-top-navbar {
         display: block;
         text-align: left;
         color: white;
         padding: 15px 30px;
         background-color: #0E1116;
+
         button {
             background-color: transparent;
             border: none;
             padding: 0%;
         }
+
         img {
             width: 32px;
             margin: 0px 20px;
@@ -823,15 +933,36 @@ body {
     .leaderboard {
         .leaderboard-content {
             margin-left: 0%;
+
             .leaderboard-table {
                 width: 100%;
             }
         }
     }
 
+    .cards-row-small {
+        visibility: hidden;
+    }
+
 }
+
 @media (min-width: 967px) {
     .leaderboard-table {
         width: 600px;
     }
+}
+
+@media (min-width: 1600px) {
+    .explore-parent {
+        .navbar {
+            width: 1600px;
+            margin: auto;
+        }
+    }
+
+    .explore {
+        width: 1600px;
+        margin: auto;
+    }
+
 }

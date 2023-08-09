@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './Navbar'
-import { Input } from 'reactstrap'
+import { Input, InputGroup, InputGroupText } from 'reactstrap'
 
 
 function Header() {
@@ -10,8 +10,12 @@ function Header() {
             <div className='header-content'>
                 <h1>YOUR ADVENTURE STARTS HERE</h1>
                 <h6>Join exciting communities, have fun and make a difference.</h6>
-                <Input placeholder='Search for communities'>
-                </Input>
+                <InputGroup>
+                    <InputGroupText>
+                        <i className="fas fa-search"></i>
+                    </InputGroupText>
+                    <Input placeholder="Search for communities" />
+                </InputGroup>
             </div>
 
         </div>

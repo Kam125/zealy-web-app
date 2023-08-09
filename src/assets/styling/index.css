@@ -16,15 +16,13 @@ body {
 }
 
 .navbar {
-  background-color: transparent !important;
-  padding: 30px 7% !important;
+  margin: 30px 6% !important;
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
   right: 0 !important;
+  background-color: #0D0D0D !important;
   z-index: 999 !important;
-  /* Adjust the z-index as needed, it should be higher than other elements on the page */
-  /* Add other styles as needed */
 }
 .navbar a {
   color: white;
@@ -152,14 +150,31 @@ body {
 .header .header-content input {
   margin-top: 20px;
   background-color: #0D0D0D;
-  border: 1px solid rgb(104, 104, 104);
-  color: rgba(255, 255, 255, 0.5921568627);
+  border: 1px solid #484848;
+  color: white;
+  border-left: none;
+  padding: 10px 20px;
+  border-radius: 15px;
 }
 .header .header-content input::-moz-placeholder {
-  color: rgba(255, 255, 255, 0.5921568627);
+  color: #5E5E5E;
 }
 .header .header-content input::placeholder {
-  color: rgba(255, 255, 255, 0.5921568627);
+  color: #5E5E5E;
+}
+.header .header-content .input-group {
+  width: 80%;
+}
+.header .header-content .input-group-text {
+  background-color: #0D0D0D;
+  border: 1px solid #484848;
+  color: #ECECEC;
+  padding-top: 0;
+  margin-top: 20px;
+  padding-left: 15px;
+  border-right: none;
+  font-size: 14px;
+  border-radius: 15px;
 }
 
 .news {
@@ -187,6 +202,12 @@ body {
   background-size: cover;
 }
 
+.filters {
+  position: sticky;
+  top: 90px;
+  background-color: #0D0D0D !important;
+  z-index: 9999;
+}
 .filters button {
   background-color: transparent !important;
   border-radius: 15px;
@@ -261,6 +282,17 @@ body {
   gap: 10px;
   width: -moz-fit-content;
   width: fit-content;
+}
+
+.primary-card-small .card {
+  padding: 0;
+}
+.primary-card-small .card img {
+  width: 40px !important;
+  border-radius: 5px;
+}
+.primary-card-small .card .card-body {
+  padding: 5px 10px;
 }
 
 .new-communities {
@@ -603,26 +635,68 @@ body {
 .post-link {
   text-decoration: none;
 }
+.post-link h3 {
+  color: white;
+}
+
+.explore-parent {
+  background-color: #0D0D0D;
+}
+.explore-parent .navbar-parent {
+  background-color: #0D0D0D;
+  width: 100%;
+}
+.explore-parent .navbar {
+  border: 1px solid rgb(80, 80, 80);
+  padding: 20px 20px !important;
+  width: 95%;
+  margin: auto !important;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #0D0D0D !important;
+}
 
 .explore {
-  background-color: #0D0D0D !important;
+  background-color: #0D0D0D;
 }
 .explore .row {
   margin: 0%;
 }
-.explore .navbar {
-  border: 1px solid grey;
-  padding: 10px 20px !important;
-  width: 95%;
-  margin: auto;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-}
 .explore .filters {
-  position: fixed;
-  top: 100px;
-  left: 35px;
-  padding: 20px 45px 20px 0px;
+  position: sticky;
+  top: 90px;
+  margin-top: 90px;
+  padding: 20px 2% 20px 2%;
+  z-index: 1000;
+}
+.explore .explore-content {
+  padding: 50px 35px 0px 35px;
+  color: white;
+}
+.explore .explore-content p {
+  color: #969696;
+}
+.explore .explore-content .btn-group {
+  background-color: transparent;
+}
+.explore .explore-content .btn-group .active {
+  background-color: #262626;
+}
+.explore .explore-content .primary-card {
+  width: 98% !important;
+  margin: auto;
+  margin-bottom: 20px;
+}
+.explore .explore-content .primary-card .card {
+  width: 99% !important;
+  padding: 5px;
+}
+.explore .explore-content .primary-card .card .col,
+.explore .explore-content .primary-card .card .col-auto {
+  padding-left: 0%;
+}
+.explore .explore-content .footer {
+  margin-top: 100px;
 }
 
 @media (max-width: 1035px) {
@@ -631,6 +705,9 @@ body {
   }
   .third-div {
     margin-left: auto;
+  }
+  .explore-content .btn-group {
+    display: none;
   }
 }
 @media (max-width: 767px) {
@@ -687,9 +764,22 @@ body {
   .leaderboard .leaderboard-content .leaderboard-table {
     width: 100%;
   }
+  .cards-row-small {
+    visibility: hidden;
+  }
 }
 @media (min-width: 967px) {
   .leaderboard-table {
     width: 600px;
+  }
+}
+@media (min-width: 1600px) {
+  .explore-parent .navbar {
+    width: 1600px;
+    margin: auto;
+  }
+  .explore {
+    width: 1600px;
+    margin: auto;
   }
 }/*# sourceMappingURL=index.css.map */

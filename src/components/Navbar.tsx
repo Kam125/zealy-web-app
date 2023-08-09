@@ -113,6 +113,10 @@ const ZeallyNavbar: React.FC = () => {
       </Navbar>
       <Modal isOpen={modalOpen} toggle={toggleModal}>
         <ModalBody>
+          <div className='text-end'>
+            <Button onClick={toggleModal}>X</Button>
+          </div>
+          <hr></hr>
           <div className='nav-modal-links'>
             <Row>
               <a href="/">Create a community</a>
