@@ -9,7 +9,6 @@ function Signup() {
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
         e.preventDefault();
-        // Do something with the email, like sending it to the server or performing validation
         console.log('Submitted email:', email);
     };
     return (

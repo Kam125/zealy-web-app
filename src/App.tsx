@@ -7,6 +7,7 @@ import LeaderBoard from './pages/LeaderBoard';
 import Explore from './pages/Explore';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
+import CreateCommunity from './pages/CreateCommunity';
 
 
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/explore" element={<Explore />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/create-community" element={<CreateCommunity />} />
         </Routes>
       </BrowserRouter>
     </div>

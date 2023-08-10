@@ -104,7 +104,7 @@ const ZeallyNavbar: React.FC = () => {
           <Col xs="auto" className='third-div p-0'>
             <Nav navbar>
               <NavItem className='m-1'>
-                <NavLink href="#">Create a community</NavLink>
+                <NavLink href='/create-community' className='post-link'>Create a community</NavLink>
               </NavItem>
               <NavItem className='m-1'>
                 <Link className='post-link' to='/login'>
