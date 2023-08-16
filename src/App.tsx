@@ -8,6 +8,7 @@ import Explore from './pages/Explore';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import CreateCommunity from './pages/CreateCommunity';
+import Changelog from './pages/Changelog';
 
 
 
@@ -23,6 +24,8 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/create-community" element={<CreateCommunity />} />
+          <Route path="/changelog" element={<Changelog />} />
+
         </Routes>
       </BrowserRouter>
     </div>

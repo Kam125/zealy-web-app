@@ -97,7 +97,7 @@ const ZeallyNavbar: React.FC = () => {
                     <DropdownItem>Option C</DropdownItem>
                   </DropdownMenu>
                 </Dropdown>
-                <NavLink href="#">Changelog</NavLink>
+                <Link className='post-link' to="/changelog">Changelog</Link>
               </div>
             </Nav>
           </Col>

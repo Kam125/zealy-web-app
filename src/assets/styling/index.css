@@ -1,6 +1,6 @@
 @charset "UTF-8";
 body {
-  background-color: #0E1116 !important;
+  background-color: #0e1116 !important;
   color: rgba(255, 255, 255, 0.9215686275);
   margin: 0%;
 }
@@ -10,7 +10,7 @@ body {
 }
 
 .home {
-  background-color: #0D0D0D;
+  background-color: #0d0d0d;
   padding-left: 5%;
   padding-right: 5%;
 }
@@ -22,7 +22,7 @@ body {
   top: 0 !important;
   left: 0 !important;
   right: 0 !important;
-  background-color: #0D0D0D !important;
+  background-color: #0d0d0d !important;
   z-index: 1 !important;
 }
 .navbar a {
@@ -151,7 +151,7 @@ body {
 }
 .header .header-content input {
   margin-top: 20px;
-  background-color: #0D0D0D;
+  background-color: #0d0d0d;
   border: 1px solid #484848;
   color: white;
   border-left: none;
@@ -159,18 +159,18 @@ body {
   border-radius: 15px;
 }
 .header .header-content input::-moz-placeholder {
-  color: #5E5E5E;
+  color: #5e5e5e;
 }
 .header .header-content input::placeholder {
-  color: #5E5E5E;
+  color: #5e5e5e;
 }
 .header .header-content .input-group {
   width: 80%;
 }
 .header .header-content .input-group-text {
-  background-color: #0D0D0D;
+  background-color: #0d0d0d;
   border: 1px solid #484848;
-  color: #ECECEC;
+  color: #ececec;
   padding-top: 0;
   margin-top: 20px;
   padding-left: 15px;
@@ -208,7 +208,7 @@ body {
   position: sticky;
   top: 78px;
   padding-top: 12px;
-  background-color: #0D0D0D !important;
+  background-color: #0d0d0d !important;
   z-index: 2;
 }
 .filters button {
@@ -261,7 +261,7 @@ body {
   padding: 15px;
 }
 .primary-card .card:hover {
-  background: linear-gradient(to right, #1B1B1B, #0D0D0D);
+  background: linear-gradient(to right, #1b1b1b, #0d0d0d);
   padding: 13px;
   border-color: rgb(44, 44, 44);
 }
@@ -385,10 +385,10 @@ body {
   align-items: center;
   width: 100%;
   padding: 10px 10px 0px 10px;
-  background-color: #0E1116;
+  background-color: #0e1116;
 }
 .welcome .welcome-navbar .fa-map {
-  color: #E34BA9;
+  color: #e34ba9;
 }
 .welcome .welcome-navbar .nav-link-quests {
   background-color: #2c2c2c;
@@ -461,11 +461,11 @@ body {
   border-radius: 10px;
 }
 .welcome-navbar .nav-top .dropdown-menu .dropdown-footer .dropdown-item {
-  color: #E75C61;
+  color: #e75c61;
   padding: 5px 10px;
 }
 .welcome-navbar .nav-top .dropdown-menu .dropdown-footer .dropdown-item:hover {
-  background-color: #442B2B;
+  background-color: #442b2b;
   border-radius: 10px;
 }
 .welcome-navbar a {
@@ -513,20 +513,20 @@ body {
   color: rgb(255, 60, 0);
 }
 .quests #👋-find-your-zeal-heading {
-  color: #8E7AFF;
+  color: #8e7aff;
   margin: 40px 0px 30px;
 }
 .quests .👋-find-your-zeal .welcome-card {
   width: 350px;
-  border: 1px solid #6054AB;
+  border: 1px solid #6054ab;
   padding: 20px 10px;
-  background: linear-gradient(45deg, #13151F, #1a1c2b);
+  background: linear-gradient(45deg, #13151f, #1a1c2b);
   border-radius: 5px;
   transition: all 0.3s ease-in-out 0s;
   cursor: pointer;
 }
 .quests .👋-find-your-zeal .welcome-card:hover {
-  background: linear-gradient(45deg, #1a1c2b, #13151F);
+  background: linear-gradient(45deg, #1a1c2b, #13151f);
 }
 .quests .👋-find-your-zeal .welcome-card h4 {
   color: white;
@@ -538,12 +538,12 @@ body {
   overflow: hidden;
 }
 .quests #🔥-prepare-for-lift-off-heading {
-  color: #F5C001;
+  color: #f5c001;
   margin: 40px 0px 30px;
 }
 .quests .🔥-prepare-for-lift-off .welcome-card {
   width: 350px;
-  border: 1px solid #7E650C;
+  border: 1px solid #7e650c;
   padding: 20px 10px;
   background: linear-gradient(45deg, #212014, #141615);
   border-radius: 5px;
@@ -570,10 +570,10 @@ body {
   display: flex;
   align-items: center;
   padding: 10px 0px 55px 0px;
-  background-color: #0E1116;
+  background-color: #0e1116;
 }
 .leaderboard .welcome-navbar .fa-chart-simple {
-  color: #E34BA9;
+  color: #e34ba9;
 }
 .leaderboard .welcome-navbar .nav-link-leaderboard {
   background-color: #2c2c2c;
@@ -589,7 +589,7 @@ body {
   font-size: 2.5em;
 }
 .leaderboard .leaderboard-content .leaderboard-table {
-  background-color: #171A1F;
+  background-color: #171a1f;
   border-radius: 5px;
   padding: 20px 0px;
   height: 450px;
@@ -620,7 +620,7 @@ body {
   border-radius: 50%;
 }
 .leaderboard .leaderboard-content .leaderboard-table span {
-  color: #1BDAB7;
+  color: #1bdab7;
 }
 .leaderboard .leaderboard-content .leaderboard-table .table-row {
   padding: 10px 20px;
@@ -643,10 +643,10 @@ body {
 }
 
 .explore-parent {
-  background-color: #0D0D0D;
+  background-color: #0d0d0d;
 }
 .explore-parent .navbar-parent {
-  background-color: #0D0D0D;
+  background-color: #0d0d0d;
   width: 100%;
 }
 .explore-parent .navbar {
@@ -656,11 +656,11 @@ body {
   margin: auto !important;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: #0D0D0D !important;
+  background-color: #0d0d0d !important;
 }
 
 .explore {
-  background-color: #0D0D0D;
+  background-color: #0d0d0d;
   margin-top: -100px;
 }
 .explore .row {
@@ -726,7 +726,7 @@ body {
 }
 .signup .signup-left p,
 .signup .signup-left span {
-  color: #8E8E8E;
+  color: #8e8e8e;
 }
 .signup .signup-left button {
   background-color: #282828;
@@ -827,7 +827,7 @@ body {
   border-radius: 10px;
 }
 .create-community .create-community-content p {
-  color: #9C9C9C;
+  color: #9c9c9c;
 }
 .create-community .create-community-content button {
   background-color: #282828;
@@ -866,7 +866,7 @@ body {
   background-color: transparent;
   border-color: #393939;
   margin-top: 10px;
-  color: #A0A0A0;
+  color: #a0a0a0;
   font-size: 20px;
 }
 .create-community .create-community-content textarea {
@@ -909,6 +909,34 @@ body {
 .create-community .create-community-content select option {
   color: white;
   background-color: #393939;
+}
+
+.changelog {
+  background-color: #0d0d0d;
+}
+.changelog .changelog-header {
+  background: url(../images/changelog-header-bg.png);
+  background-blend-mode: screen;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 240px 0 130px;
+}
+.changelog .changelog-header p {
+  color: #f65cb6;
+}
+.changelog .changelog-header h1 {
+  color: white;
+  font-size: calc(1.375rem + 1.5vw);
+  margin-bottom: 30px;
+  font-weight: bolder;
+}
+.changelog .changelog-header h6 {
+  color: #949494;
+  margin-bottom: 15px;
+}
+.changelog .changelog-header a {
+  color: #d14999;
+  padding: 15px;
 }
 
 @media (max-width: 1035px) {
@@ -959,7 +987,7 @@ body {
     text-align: left;
     color: white;
     padding: 15px 30px;
-    background-color: #0E1116;
+    background-color: #0e1116;
   }
   .welcome-top-navbar button {
     background-color: transparent;
