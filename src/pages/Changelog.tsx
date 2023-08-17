@@ -17,7 +17,7 @@ function Changelog() {
         <h1>WHAT'S NEW</h1>
         <h6>New updates and improvements to Zealy</h6>
         <Link className="post-link" to="/changelog">
-          Follow us on Twitter
+        <i className="fa-brands fa-twitter"></i> Follow us on Twitter
         </Link>
         <Link className="post-link" to="/changelog">
           Read our docs
