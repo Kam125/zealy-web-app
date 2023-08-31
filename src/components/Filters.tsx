@@ -6,9 +6,7 @@ import { Button, Row, Col } from 'reactstrap';
 
 function Filters() {
   const filtersContainerRef = useRef<HTMLDivElement>(null); // Specify the type of the ref
-  const [scrollLeft, setScrollLeft] = useState(0);
-  console.log(scrollLeft);
-
+  const [, setScrollLeft] = useState(0);
   const handleScrollLeft = () => {
     if (filtersContainerRef.current) {
       filtersContainerRef.current.scrollLeft -= 100; // You can adjust the scroll amount here

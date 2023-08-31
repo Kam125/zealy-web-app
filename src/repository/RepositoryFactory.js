@@ -1,7 +1,9 @@
 import AuthRepository from "./AuthRepository";
+import CommunityRepository from "./CommunityRepository";
 
 const repositories = {
-    auth: AuthRepository
+    auth: AuthRepository,
+    community: CommunityRepository
 };
 
 export const RepositoryFactory = {

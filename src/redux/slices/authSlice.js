@@ -14,7 +14,7 @@ export const signup = createAsyncThunk(
         toast.success("User Registered Successfully");
         // Repository.defaults.headers.Authorization = data?.data?.token;
         onSuccess();
-        return { data: data?.data };
+        return data?.data;
       }
     } catch (error) {
       toast.error(error?.response?.data?.message);
@@ -29,7 +29,7 @@ export const login = createAsyncThunk(
     try {
       const data = await authRepo.login(payload);
       if (data?.status === 201) {
-        toast.success("User Logged In Successfully");
+        console.log("User Logged In Successfully");
         // Repository.defaults.headers.Authorization = data?.data?.token;
         onSuccess();
         return data?.data;
@@ -72,7 +72,6 @@ const authSlice = createSlice({
         console.log(action.payload)
       state.authLoading = false;
       localStorage.setItem("token", action?.payload?.token);
-      state.user = action?.payload?.data?.user;
       state.token = action?.payload?.data?.token;
     });
     builder.addCase(login.rejected, (state, action) => {

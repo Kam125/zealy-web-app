@@ -15,7 +15,7 @@ import Changelog from './pages/Changelog';
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      {/* <BrowserRouter> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/welcome/quests" element={<WelcomeQuests />} />
@@ -27,7 +27,7 @@ function App() {
           <Route path="/changelog" element={<Changelog />} />
 
         </Routes>
-      </BrowserRouter>
+      {/* </BrowserRouter> */}
     </div>
   );
 }

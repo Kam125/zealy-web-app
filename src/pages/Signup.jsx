@@ -4,7 +4,6 @@ import logo from '../assets/images/logoWelcome.png'
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { signup } from "../redux/slices/authSlice";
-import { AnyAction } from 'redux';
 
 
 function Signup() {

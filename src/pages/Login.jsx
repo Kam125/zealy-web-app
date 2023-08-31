@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Button, Col, Input, InputGroup, Row } from 'reactstrap'
 import logo from '../assets/images/logoWelcome.png'
-import { Link, Navigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../redux/slices/authSlice";
 
@@ -11,18 +11,19 @@ function Login() {
     const [password1, setPassword1] = useState('');
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const handleSubmit = (e=> {
         e.preventDefault();
         const payload = {email: email1, password: password1};
-        console.log(payload)
+        
         dispatch(
           login({
             payload,
             onSuccess: () => {
-              Navigate("/");
             setPassword1("");
             setEmail1("");
+            navigate("/");
             },
           })
         );
