@@ -1,17 +1,32 @@
 import React, { useState } from 'react'
 import { Button, Col, Input, InputGroup, Row } from 'reactstrap'
 import logo from '../assets/images/logoWelcome.png'
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
+import { login } from "../redux/slices/authSlice";
 
 
 function Login() {
-    const [email, setEmail] = useState<string>('');
+    const [email1, setEmail1] = useState('');
+    const [password1, setPassword1] = useState('');
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+    const dispatch = useDispatch();
+
+    const handleSubmit = (e=> {
         e.preventDefault();
-        // Do something with the email, like sending it to the server or performing validation
-        console.log('Submitted email:', email);
-    };
+        const payload = {email: email1, password: password1};
+        console.log(payload)
+        dispatch(
+          login({
+            payload,
+            onSuccess: () => {
+              Navigate("/");
+            setPassword1("");
+            setEmail1("");
+            },
+          })
+        );
+    });
     return (
         <div className='signup'>
             <Row className='align-items-stretch'>
@@ -45,8 +60,18 @@ function Login() {
                                 <Input
                                     type="email"
                                     placeholder="kenny@zealy.io"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
+                                    value={email1}
+                                    onChange={(e) => setEmail1(e.target.value)}
+                                    required
+                                />
+                            </InputGroup>
+                            <label className='mt-4' htmlFor="password">Password</label>
+                            <InputGroup>
+                                <Input
+                                    type="password"
+                                    placeholder=""
+                                    value={password1}
+                                    onChange={(e) => setPassword1(e.target.value)}
                                     required
                                 />
                             </InputGroup>

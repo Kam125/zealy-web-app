@@ -2,15 +2,27 @@ import React, { useState } from 'react'
 import { Button, Col, Input, InputGroup, Row } from 'reactstrap'
 import logo from '../assets/images/logoWelcome.png'
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
+import { signup } from "../redux/slices/authSlice";
+import { AnyAction } from 'redux';
 
 
 function Signup() {
-    const [email, setEmail] = useState<string>('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const dispatch = useDispatch();
+    // const { authLoading } = useSelector((state) => state.auth);
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+
+    const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Submitted email:', email);
+        const payload = { email, password };
+        dispatch(signup({ payload, onSuccess: () => {
+            setEmail("");
+            setPassword("");
+        }}));
     };
+    
     return (
         <div className='signup'>
             <Row className='align-items-stretch'>
@@ -46,6 +58,16 @@ function Signup() {
                                     placeholder="kenny@zealy.io"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
+                                    required
+                                />
+                            </InputGroup>
+                            <label className='mt-4' htmlFor="password">Password</label>
+                            <InputGroup>
+                                <Input
+                                    type="password"
+                                    placeholder=""
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
                                     required
                                 />
                             </InputGroup>
