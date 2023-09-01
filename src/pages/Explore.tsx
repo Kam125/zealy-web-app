@@ -5,7 +5,6 @@ import { ButtonGroup, Col, Row, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import PrimaryCard from "../components/PrimaryCard";
 import Footer from "../components/Footer";
-import PrimaryCardSmall from "../components/PrimaryCardSmall";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCommunities } from "../redux/slices/communitySlice";
 
@@ -57,7 +56,7 @@ function Explore() {
           <div className="cards-row-container mt-5">
             {rSelected === 1 && (
               <Row className="cards-row justify-content-center">
-                {data.map((item: any, index: any) => (
+                {data?.map((item: any, index: any) => (
                   <Col lg="4" className="p-0">
                     <Link to="/welcome/quests" className="post-link">
                       <PrimaryCard
@@ -78,7 +77,7 @@ function Explore() {
             )}
             {rSelected === 2 && (
               <Row className="cards-row cards-row-small justify-content-center">
-                               {data.map((item: any, index: any) => (
+                {data?.map((item: any, index: any) => (
                   <Col xs="12" className="p-0">
                     <Link to="/welcome/quests" className="post-link">
                       <PrimaryCard

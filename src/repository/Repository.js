@@ -1,12 +1,12 @@
 import axios from "axios";
 
 // const baseDomain = "http://localhost:3100";
-const baseDomain = 'http://192.168.18.17:3000';
+const baseDomain = 'http://192.168.18.17:5000';
 const baseURL = `${baseDomain}`;
 
 // Create a function to update the axios instance headers
 const updateAuthorizationHeader = () => {
-  const token = localStorage.getItem("token");
+  const token = sessionStorage.getItem("token");
   axiosInstance.defaults.headers.common["Authorization"] = token || "";
 };
 

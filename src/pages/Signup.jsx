@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { Button, Col, Input, InputGroup, Row } from 'reactstrap'
 import logo from '../assets/images/logoWelcome.png'
-import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch } from "react-redux";
 import { signup } from "../redux/slices/authSlice";
 
 
@@ -10,6 +10,7 @@ function Signup() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     // const { authLoading } = useSelector((state) => state.auth);
 
 
@@ -19,6 +20,7 @@ function Signup() {
         dispatch(signup({ payload, onSuccess: () => {
             setEmail("");
             setPassword("");
+            navigate("/");
         }}));
     };
     

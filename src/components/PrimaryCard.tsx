@@ -33,7 +33,7 @@ const PrimaryCard: React.FC<PrimaryCardProps> = ({ title, text, imageUrl, links 
                     {links && links.length > 0 && (
                         <div>
                             <Row className='links-row align-items-center'>
-                                {links.map((link, index) => (
+                                {links?.map((link, index) => (
                                     <Col key={index} xs='auto'>
                                         <CardLink href={link.url}>
                                             <i className="fa fa-asterisk"></i>

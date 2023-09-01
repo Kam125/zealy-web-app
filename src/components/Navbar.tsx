@@ -1,37 +1,51 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import {
-  Navbar, Nav, NavItem, NavLink, Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Button, Col, Row,
-  Modal, ModalBody
-} from 'reactstrap';
-import logo from '../assets/images/logo.png';
-import { Link } from 'react-router-dom';
-
+  Navbar,
+  Nav,
+  NavItem,
+  NavLink,
+  Dropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  Button,
+  Col,
+  Row,
+  Modal,
+  ModalBody,
+} from "reactstrap";
+import logo from "../assets/images/logo.png";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../redux/slices/authSlice";
 
 const ZeallyNavbar: React.FC = () => {
   const [dropdown1Open, setDropdown1Open] = useState(false);
   const [dropdown2Open, setDropdown2Open] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
-  const [buttonText, setButtonText] = useState('Create an account');
+  const [buttonText, setButtonText] = useState("Create an account");
+
 
   const toggleDropdown1 = () => setDropdown1Open(!dropdown1Open);
   const toggleDropdown2 = () => setDropdown2Open(!dropdown2Open);
 
+  const { token } = useSelector((state: any) => state.auth);
+  const dispatch = useDispatch();
 
   const updateButtonText = () => {
     const screenWidth = window.innerWidth;
     if (screenWidth < 768) {
-      setButtonText('☰');
+      setButtonText("☰");
     } else {
-      setButtonText('Create an account');
+      setButtonText("Create an account");
     }
   };
 
   const toggleModal = () => {
     if (window.innerWidth < 768) {
       setModalOpen(!modalOpen);
-    }
-    else {
-      window.location.href = '/signup';
+    } else {
+      window.location.href = "/signup";
     }
   };
 
@@ -42,9 +56,9 @@ const ZeallyNavbar: React.FC = () => {
 
   useEffect(() => {
     updateButtonText();
-    window.addEventListener('resize', updateButtonText);
+    window.addEventListener("resize", updateButtonText);
     return () => {
-      window.removeEventListener('resize', updateButtonText);
+      window.removeEventListener("resize", updateButtonText);
     };
   }, []);
 
@@ -54,14 +68,20 @@ const ZeallyNavbar: React.FC = () => {
     <>
       <Navbar color="" expand="md">
         <Row className="w-100">
-          <Col xs="auto" className='m-1 p-0'>
+          <Col xs="auto" className="m-1 p-0">
             <img src={logo} alt="Logo" />
           </Col>
-          <Col className='second-div p-0'>
+          <Col className="second-div p-0">
             <Nav className="mr-auto" navbar>
               <div className="d-flex align-items-center">
                 {/* Use onMouseEnter and onMouseLeave event handlers */}
-                <Dropdown nav isOpen={dropdown1Open} toggle={toggleDropdown1} onMouseEnter={handleMouseEnterDropdown1} onMouseLeave={handleMouseLeaveDropdown1}>
+                <Dropdown
+                  nav
+                  isOpen={dropdown1Open}
+                  toggle={toggleDropdown1}
+                  onMouseEnter={handleMouseEnterDropdown1}
+                  onMouseLeave={handleMouseLeaveDropdown1}
+                >
                   <DropdownToggle nav caret>
                     Resources
                   </DropdownToggle>
@@ -87,7 +107,13 @@ const ZeallyNavbar: React.FC = () => {
                   </DropdownMenu>
                 </Dropdown>
                 {/* Use onMouseEnter and onMouseLeave event handlers */}
-                <Dropdown nav isOpen={dropdown2Open} toggle={toggleDropdown2} onMouseEnter={handleMouseEnterDropdown2} onMouseLeave={handleMouseLeaveDropdown2}>
+                <Dropdown
+                  nav
+                  isOpen={dropdown2Open}
+                  toggle={toggleDropdown2}
+                  onMouseEnter={handleMouseEnterDropdown2}
+                  onMouseLeave={handleMouseLeaveDropdown2}
+                >
                   <DropdownToggle nav caret>
                     Company
                   </DropdownToggle>
@@ -97,34 +123,50 @@ const ZeallyNavbar: React.FC = () => {
                     <DropdownItem>Option C</DropdownItem>
                   </DropdownMenu>
                 </Dropdown>
-                <Link className='post-link' to="/changelog">Changelog</Link>
+                <Link className="post-link" to="/changelog">
+                  Changelog
+                </Link>
               </div>
             </Nav>
           </Col>
-          <Col xs="auto" className='third-div p-0'>
+          <Col xs="auto" className="third-div p-0">
             <Nav navbar>
-              <NavItem className='m-1'>
-                <NavLink href='/create-community' className='post-link'>Create a community</NavLink>
+              <NavItem className="m-1">
+                <NavLink href="/create-community" className="post-link">
+                  Create a community
+                </NavLink>
               </NavItem>
-              <NavItem className='m-1'>
-                <Link className='post-link' to='/login'>
-                  <Button className='login-button' color="secondary">Login</Button>
-                </Link>
-              </NavItem>
-              <NavItem className='m-1'>
-                <Button className='' color="light" onClick={toggleModal}>{buttonText}</Button>
-              </NavItem>
+              {token ? (
+                <NavItem className="m-1">
+                    <Button className="login-button" color="secondary" onClick={()=> {dispatch<any>(logout())}}>
+                      Logout
+                    </Button>
+                </NavItem>
+              ) : (
+                <NavItem className="m-1">
+                  <Link className="post-link" to="/login">
+                    <Button className="login-button" color="secondary">
+                      Login
+                    </Button>
+                  </Link>
+                </NavItem>
+              )}
+              {!token && <NavItem className="m-1">
+                <Button className="" color="light" onClick={toggleModal}>
+                  {buttonText}
+                </Button>
+              </NavItem>}
             </Nav>
           </Col>
         </Row>
       </Navbar>
       <Modal isOpen={modalOpen} toggle={toggleModal}>
         <ModalBody>
-          <div className='text-end'>
+          <div className="text-end">
             <Button onClick={toggleModal}>X</Button>
           </div>
           <hr></hr>
-          <div className='nav-modal-links'>
+          <div className="nav-modal-links">
             <Row>
               <a href="/">Create a community</a>
             </Row>
@@ -151,15 +193,19 @@ const ZeallyNavbar: React.FC = () => {
             </Row>
           </div>
           <hr></hr>
-          <Row className='nav-modal-buttons'>
+          <Row className="nav-modal-buttons">
             <Col>
-              <Link to='/login' className='post-link'>
-                <Button className='login-button' color="secondary">Login</Button>
+              <Link to="/login" className="post-link">
+                <Button className="login-button" color="secondary">
+                  Login
+                </Button>
               </Link>
             </Col>
             <Col>
-              <Link to='/signup' className='post-link'>
-                <Button className='' color="light">Create an account</Button>
+              <Link to="/signup" className="post-link">
+                <Button className="" color="light">
+                  Create an account
+                </Button>
               </Link>
             </Col>
           </Row>

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Button, Col, Input, InputGroup, Row } from 'reactstrap'
 import logo from '../assets/images/logoWelcome.png'
 import { Link, useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { login } from "../redux/slices/authSlice";
 
 

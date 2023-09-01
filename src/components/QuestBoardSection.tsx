@@ -18,11 +18,11 @@ function QuestBoardSection({ headers, cardArrays }: QuestBoardSectionProps) {
 
   return (
     <div className='questboard-section'>
-      {headers.map((header, index) => (
+      {headers?.map((header, index) => (
         <div key={index}>
           <h5 id={`${header.replace(/\s/g, '-').toLowerCase()}-heading`}>#{header}</h5>
           <Row className={`${header.replace(/\s/g, '-').toLowerCase()} gap-3`}>
-            {cardArrays[index].map((cardData, cardIndex) => (
+            {cardArrays[index]?.map((cardData, cardIndex) => (
               <WelcomeCard
                 key={cardIndex}
                 title={cardData.title}

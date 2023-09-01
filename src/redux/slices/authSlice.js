@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RepositoryFactory } from "../../repository/RepositoryFactory";
 import { toast } from "react-toastify";
-import Repository from "../../repository/Repository";
+
 
 var authRepo = RepositoryFactory.get("auth");
 
@@ -29,8 +29,7 @@ export const login = createAsyncThunk(
     try {
       const data = await authRepo.login(payload);
       if (data?.status === 201) {
-        console.log("User Logged In Successfully");
-        // Repository.defaults.headers.Authorization = data?.data?.token;
+        toast.success("User Logged In Successfully");
         onSuccess();
         return data?.data;
       }
@@ -41,44 +40,58 @@ export const login = createAsyncThunk(
   }
 );
 
+// export const logout = createAsyncThunk (
+//   ()=> {
+//     console.log('logout called')
+//   }
+// )
+
 
 const initialState = {
   authLoading: false,
   user: null,
-  token: localStorage.getItem("token"),
+  isSignedIn: false,
+  token: sessionStorage.getItem("token"),
 };
 const authSlice = createSlice({
   name: "auth",
   initialState,
-  reducers: {},
+  reducers: {
+    logout: (state)=> {
+      state.token=null;
+      sessionStorage.removeItem("token")
+    }
+  },
   extraReducers: (builder) => {
     builder.addCase(signup.pending, (state, action) => {
       state.authLoading = true;
     });
     builder.addCase(signup.fulfilled, (state, action) => {
       state.authLoading = false;
-      // localStorage.setItem("token", action?.payload?.data?.token);
-      state.user = action?.payload?.data?.user;
-      state.token = action?.payload?.data?.token;
+      sessionStorage.setItem("token", action?.payload?.token);
+      state.token = action?.payload?.token;
+      state.isSignedIn = true;
     });
     builder.addCase(signup.rejected, (state, action) => {
       state.authLoading = false;
-      // localStorage.clear("token");
+      // sessionStorage.clear("token");
     });
     builder.addCase(login.pending, (state, action) => {
       state.authLoading = true;
     });
     builder.addCase(login.fulfilled, (state, action) => {
-        console.log(action.payload)
       state.authLoading = false;
-      localStorage.setItem("token", action?.payload?.token);
-      state.token = action?.payload?.data?.token;
+      sessionStorage.setItem("token", action?.payload?.token);
+      state.token = action?.payload?.token;
+      state.isSignedIn = true;
     });
     builder.addCase(login.rejected, (state, action) => {
       state.authLoading = false;
-      localStorage.clear("token");
+      sessionStorage.clear("token");
     });
   },
 });
+
+export const { logout } = authSlice.actions
 
 export default authSlice.reducer;

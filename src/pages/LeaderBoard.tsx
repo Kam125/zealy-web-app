@@ -118,7 +118,7 @@ function LeaderBoard() {
           <div className='leaderboard-content'>
             <h1>Leaderboard</h1>
             <div className='leaderboard-table'>
-              {data.map((item) => (
+              {data?.map((item) => (
                 <Row
                   key={item.id}
                   className='justify-content-between align-items-center table-row'

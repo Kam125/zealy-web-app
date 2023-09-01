@@ -29,7 +29,7 @@ const PrimaryCardSmall: React.FC<PrimaryCardSmallProps> = ({ title, imageUrl, li
                         <Col sm='7'>
                             {links && links.length > 0 && (
                                 <div className='links-row d-flex justify-content-between'>
-                                    {links.map((link, index) => (
+                                    {links?.map((link, index) => (
                                             
                                                 <CardLink key={index} href={link.url}>
                                                     <i className="fa fa-asterisk"></i>
