@@ -6,16 +6,29 @@ import { Link } from "react-router-dom";
 import PrimaryCard from "../components/PrimaryCard";
 import Footer from "../components/Footer";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllCommunities } from "../redux/slices/communitySlice";
+import {
+  getAllCommunities,
+  updateCommunity,
+} from "../redux/slices/communitySlice";
 
 function Explore() {
-  const [rSelected, setRSelected] = useState<number>(1);
+  const [rSelected, setRSelected] = useState(1);
+  let [like, setLike]= useState(0);
   const dispatch = useDispatch();
-  const { data } = useSelector((state: any) => state.community);
+  const { data } = useSelector((state) => state.community);
   useEffect(() => {
-    dispatch<any>(getAllCommunities());
-  }, [dispatch]);
+    const payload = { offset: 0, limit: 100 };
+    dispatch(getAllCommunities(payload));
+  }, [like]);
   console.log(data);
+  const logos = data?.map((item) => {
+    const logoData = item.logo;
+    const uint8Array = new Uint8Array(logoData?.data);
+    const blob = new Blob([uint8Array], { type: "image/jpeg" });
+    const imgSrc = URL.createObjectURL(blob);
+    return imgSrc;
+  });
+
   return (
     <div className="explore-parent">
       <div className="navbar-parent">
@@ -56,19 +69,32 @@ function Explore() {
           <div className="cards-row-container mt-5">
             {rSelected === 1 && (
               <Row className="cards-row justify-content-center">
-                {data?.map((item: any, index: any) => (
+                {data?.map((item, index) => (
                   <Col lg="4" className="p-0">
                     <Link to="/welcome/quests" className="post-link">
                       <PrimaryCard
                         key={index}
                         title={item.name}
                         text={item.description}
-                        imageUrl="https://crew3-production.s3.eu-west-3.amazonaws.com/public/fb558985-ec9c-4951-a7f4-49c7cb69b29c-profile.png"
+                        imageUrl={logos[index]}
                         links={[
-                          { label: "", url: "https://example.com/link1" },
+                          {
+                            label: "" + item.likes? item.likes: 0,
+                            url: "https://example.com/link1",
+                          },
                           { label: "29", url: "https://example.com/link2" },
                           { label: "185", url: "https://example.com/link3" },
                         ]}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          dispatch(
+                            updateCommunity({
+                              likes: item.likes+1,
+                              id: item._id,
+                            }),
+                          );
+                          setLike(like+1)
+                        }}
                       />
                     </Link>
                   </Col>
@@ -77,14 +103,14 @@ function Explore() {
             )}
             {rSelected === 2 && (
               <Row className="cards-row cards-row-small justify-content-center">
-                {data?.map((item: any, index: any) => (
+                {data?.map((item, index) => (
                   <Col xs="12" className="p-0">
                     <Link to="/welcome/quests" className="post-link">
                       <PrimaryCard
                         key={index}
                         title={item.name}
                         text={item.description}
-                        imageUrl="https://crew3-production.s3.eu-west-3.amazonaws.com/public/fb558985-ec9c-4951-a7f4-49c7cb69b29c-profile.png"
+                        imageUrl={logos[index]}
                         links={[
                           { label: "", url: "https://example.com/link1" },
                           { label: "29", url: "https://example.com/link2" },

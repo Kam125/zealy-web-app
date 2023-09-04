@@ -21,11 +21,28 @@ export const createCommunity = createAsyncThunk(
   }
 );
 
+export const updateCommunity = createAsyncThunk(
+  "community/updateCommunity",
+  async (payload) => {
+    try {
+      const data = await communityRepo.updateCommunity(payload);
+      if (data?.status === 200) {
+        //   Repository.defaults.headers.Authorization = data?.data?.token;
+        toast.success("Community Updated Successfully");
+        // console.log(data?.data)
+        return { data: data?.data };
+      }
+    } catch (error) {
+      toast.error(error?.response?.data?.message);
+    }
+  }
+);
+
 export const getAllCommunities = createAsyncThunk(
   "web/getAllCommunities",
-  async () => {
+  async (payload) => {
     try {
-      const data = await communityRepo.getAllCommunities();
+      const data = await communityRepo.getAllCommunities(payload);
       if (data.status === 200) {
         return data?.data;
       }
@@ -35,6 +52,8 @@ export const getAllCommunities = createAsyncThunk(
     }
   }
 );
+
+
 
 const initialState = {
   webLoading: false,
